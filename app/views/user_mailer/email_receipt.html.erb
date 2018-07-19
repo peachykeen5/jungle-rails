@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thanks for your order!%></h1>
+    <p>
+      Your order number is: <%= @order.id %>.<br>
+    </p>
+    <div class="panel panel-default items">
+    <%= render :partial =>'line_items/line_item', :collection => @line_item %>
+  </div>
+    <p>Thanks for ordering!</p>
+  </body>
+</html>
