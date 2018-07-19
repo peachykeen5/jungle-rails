@@ -4,6 +4,11 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if cart.length == 0 %>
+  <br>
+  <h3>It appears as though your cart is empty. 🧐 </h3>
+  <p>To purchase items, please continue shopping and click the 'Add' button to add items to your cart.</p>
+  <% else %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -49,5 +54,7 @@
       <% end %>
     </div>
   </div>
-
+  <% end %>
+  <br>
+  <%= link_to "Continue Shopping", root_path, class: 'btn btn-med btn-primary' %>
 </section>
