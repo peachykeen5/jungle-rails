@@ -20,10 +20,27 @@
     <tfoot>
       <tr>
       <th colspan="4">
+      SUBTOTAL:
+    </th>
+    <th>
+      $<%= subtotal = @order.total_cents/100.00 %>
+    </th>
+      </tr>
+      <tr>
+      <th colspan="4">
+      TAX:
+    </th>
+    <th>
+      $<%= tax_amount = subtotal * 0.15 %>
+    </th>
+      </tr>
+      </tr>
+      <tr>
+      <th colspan="4">
       TOTAL:
     </th>
     <th>
-      $<%= @order.total_cents/100.00 %>
+      $<%= subtotal + tax_amount %>
     </th>
       </tr>
     </tfoot>
