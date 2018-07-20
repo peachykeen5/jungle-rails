@@ -25,6 +25,44 @@
         </dl>
       </div>
     </div>
+    <br>
+    <% if current_user %>
+    <div class="row">
+    <div class="col-sm-8">
+      <dl class="dl-horizontal">
+        <h4> Rate This Product </h4>
+          <br>
+          <%= form_for [@product, @review] do |f| %>
+          <dt>Description: </dt>
+          <dd><%= f.text_area :description %></dd>
+          <dd><%= f.hidden_field :user_id, value: current_user.id %></dd>
+          <br>
+          <dt>Rating: </dt>
+          <dd><%= f.select :rating, choices=[1, 2, 3, 4, 5] %></dd>
+          <br>
+          <dd><%= f.submit %></dd>
+          <% end %>
+      </dl>
+    <br>
+    </div>
+    <%elsif %>
+    <p><i> Please login to submit a product review</i> </p>
+    <% end %>
+
+    </div>
+  <h4>Reviews</h4>
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Rating</th>
+            <th>Description</th>
+            <th>User ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @reviews %>
+        </tbody>
+      </table>
 
   </article>
 

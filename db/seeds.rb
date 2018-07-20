@@ -21,6 +21,12 @@ end
 
 # Let's do this ...
 
+## USERS
+
+mickey = User.create first_name: "Minnie", last_name: "Mouse", email: "minnie@me.me"
+puts mickey
+
+
 ## CATEGORIES
 
 puts "Finding or Creating Categories ..."
@@ -132,5 +138,32 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## REVIEWS
+
+puts "Generating ratings...."
+
+prod1 = Product.find_or_create_by! name: 'Red Bookshelf'
+prod2 = Product.find_or_create_by! name: 'Hotdog Slicer'
+prod3 = Product.find_or_create_by! name: 'Modern Skateboards'
+
+rate1 = prod1.reviews.create!({
+  user_id: 1,
+  description:"this shelf holds all my things", 
+  rating: 4 
+})
+rate2 = prod2.reviews.create!({
+  user_id: 1,
+  description:"very difficult to relax", 
+  rating: 2 
+})
+rate3 = prod3.reviews.create!({
+  user_id: 1,
+  description:"Coolest way to get around town", 
+  rating: 5
+})
+
+
 
 puts "DONE!"
+
+

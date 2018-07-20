@@ -1,0 +1,16 @@
+<tr>
+            <td>
+                <%= review.rating %>/5
+            </td>
+            <td>
+                <%= review.description %>
+            </td>
+            <td>
+                <%= review.user.first_name%>
+                <% if current_user %>
+                <% if current_user.id == review.user.id %>
+                <%= link_to fa_icon('trash'), product_review_path(:product_id=>@product.id, :id => review.id), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+                <% end %>          
+                <% end %>  
+            </td>
+</tr>
