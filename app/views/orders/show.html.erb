@@ -23,7 +23,7 @@
       SUBTOTAL:
     </th>
     <th>
-      $<%= subtotal = @order.total_cents/100.00 %>
+      $<%= @order.total_cents/100.00 %>
     </th>
       </tr>
       <tr>
@@ -31,7 +31,7 @@
       TAX:
     </th>
     <th>
-      $<%= tax_amount = subtotal * 0.15 %>
+      $<%= tax_amount = @order.total * 0.15 %>
     </th>
       </tr>
       </tr>
@@ -40,7 +40,7 @@
       TOTAL:
     </th>
     <th>
-      $<%= subtotal + tax_amount %>
+      $<%= @order.total + tax_amount %>
     </th>
       </tr>
     </tfoot>
