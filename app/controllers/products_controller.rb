@@ -10,4 +10,5 @@ class ProductsController < ApplicationController
     @reviews = @product.reviews.order(created_at: :desc)
   end
 
+
 end

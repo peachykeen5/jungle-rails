@@ -25,11 +25,15 @@ class ReviewsController < ApplicationController
         @review = Review.find params[:id]
         @review.destroy
         redirect_to :back
-      end
+    end
 
 
     def review_params
         params.require(:review).permit(:description, :rating, :product_id, :user_id)
+    end
+
+    def blank_stars
+        5 - rating.to_i
     end
 
 end
