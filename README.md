@@ -3,6 +3,11 @@
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
 ## Screenshots
+!["screenshot of signup page"](https://github.com/peachykeen5/jungle-rails/blob/master/docs/jungle-signup.gif)
+
+!["screenshot of product ratings"](https://github.com/peachykeen5/jungle-rails/blob/master/docs/jungle-product-ratings.gif)
+
+!["screenshot of empty cart"](https://github.com/peachykeen5/jungle-rails/blob/master/docs/jungle-empty-cart.gif)
 
 ## Setup
 
