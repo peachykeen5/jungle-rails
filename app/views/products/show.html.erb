@@ -51,6 +51,10 @@
 
     </div>
   <h4>Reviews</h4>
+  <% if @reviews.length == 0 %>
+    <p> No Reviews </p>
+    <br>
+    <% else %>
     <table class="table table-bordered">
         <thead>
           <tr>
@@ -63,6 +67,7 @@
           <%= render @reviews %>
         </tbody>
       </table>
+      <% end %>
 
   </article>
 
