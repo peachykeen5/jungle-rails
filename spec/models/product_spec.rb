@@ -13,7 +13,11 @@ RSpec.describe Product, type: :model do
     end
 
     it 'should not create a product if it does not belong to a category' do
-      @product = Product.new
+      @product = Product.new({
+        name:  'Hipster Socks',
+        quantity: 8,
+        price: 25.00
+      })
       expect(@product.id).to be_nil
     end
 
